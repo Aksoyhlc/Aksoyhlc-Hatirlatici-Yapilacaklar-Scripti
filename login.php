@@ -47,33 +47,40 @@
                     <div class="form-group">
                       <input type="password" name="kul_sifre" class="form-control form-control-user" id="exampleInputPassword" placeholder="Şifreniz">
                     </div>
-                    <button type="submit" name="oturumacma" class="btn btn-primary btn-user btn-block">Giriş Yap</button>
-                  </form>
-                  <div class="text-center mt-3">
-                    <h5><?php echo $ayarcek['site_baslik']; ?></h5>
+                    <div class="row">
+                     <div class="col-md-6">
+                       <a class="btn-link" href="kayit.php"><button type="button" class="btn btn-danger btn-block">Kayıt Ol</button></a>
+                     </div>
+                     <div class="col-md-6">
+                      <button type="submit" name="oturumacma" class="btn btn-primary btn-user btn-block">Giriş Yap</button>
+                    </div>
                   </div>
+                </form>
+                <div class="text-center mt-3">
+                  <h5><?php echo $ayarcek['site_baslik']; ?></h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
     </div>
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="vendor/sweetalert/sweetalert2.all.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<script src="vendor/sweetalert/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

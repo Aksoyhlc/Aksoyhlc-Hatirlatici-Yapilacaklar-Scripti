@@ -63,63 +63,64 @@
                     </div>
                     <input class="d-none" type="submit" name="kayitol" value="gönder" id="gondermebutonu">
                     <div class="text-center">
-                      <button type="button" class="btn btn-primary" id="kontrolbuton">Kayıt Ol</button>
-                    </div>
-                  </form>
-                  <div class="text-center mt-3">
-                    <h5><?php echo $ayarcek['site_baslik']; ?></h5>
-                  </div>
+                     <a href="login.php"><button type="button" class="btn btn-danger">Giriş Yap</button></a>
+                     <button type="button" class="btn btn-primary" id="kontrolbuton">Kayıt Ol</button>
+                   </div>
+                 </form>
+                 <div class="text-center mt-3">
+                  <h5><?php echo $ayarcek['site_baslik']; ?></h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
     </div>
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      $("#kontrolbuton").click(function () {
-        metin1 = $(".not-sifresi").val();
-        metin2 = $(".not-sifresi-tekrar").val();
-        if (metin1!=metin2) {
-          alert("Şifreler Aynı Değil")
-        } else {
-          $.ajax({
-            url: 'islemler/ajax.php',
-            type: 'POST',
-            data: $("#kayitformu").serialize()+"&kayitol=kayitol",
-            success:function (donenveri) {
-              var gelen=JSON.parse(donenveri);
-              var deger=gelen.sonuc;
-              if (deger=="ok") {
-                window.location="login.php";
-              } else if (deger="mailalindi") {
-                alert("Bu Mail Adresi Önceden ALınmış")
-              } else {
-                alert("Kayıt Başarısız")
-              }
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $("#kontrolbuton").click(function () {
+      metin1 = $(".not-sifresi").val();
+      metin2 = $(".not-sifresi-tekrar").val();
+      if (metin1!=metin2) {
+        alert("Şifreler Aynı Değil")
+      } else {
+        $.ajax({
+          url: 'islemler/ajax.php',
+          type: 'POST',
+          data: $("#kayitformu").serialize()+"&kayitol=kayitol",
+          success:function (donenveri) {
+            var gelen=JSON.parse(donenveri);
+            var deger=gelen.sonuc;
+            if (deger=="ok") {
+              window.location="login.php";
+            } else if (deger="mailalindi") {
+              alert("Bu Mail Adresi Önceden ALınmış")
+            } else {
+              alert("Kayıt Başarısız")
             }
-          })
-        }
-      });
-
+          }
+        })
+      }
     });
-  </script>
+
+  });
+</script>
 
 </body>
 
